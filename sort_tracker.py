@@ -78,9 +78,6 @@ def merge_sort(arr, index=0):
         
         return merge(merge_sort(arr1, index),merge_sort(arr2, index + midpoint), index)
 
-array.sort()
-array = array[::]
-
 #draws the initial graph
 for t, obj in zip(turtles,array):
     draw(t,obj * bar_height_unit)
