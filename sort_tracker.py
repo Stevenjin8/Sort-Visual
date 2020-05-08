@@ -1,6 +1,7 @@
 from turtle import Turtle, Screen
 import time
 import random
+import math
 
 #setting screen constants
 screen = Screen()
@@ -9,7 +10,7 @@ screen_width = screen.window_width()-40
 screen.tracer(False)
 
 #creates array and array other constants
-array = [((random.random())) for _ in range(300)]
+array = [30*(random.random())+1 for _ in range(300)]
 array_max = max(array)
 array_min = min(array)
 bar_width = screen_width//len(array)
@@ -63,8 +64,9 @@ def merge(arr1, arr2, index):
                     #draws the bars that have changed
                     for x, t in zip(arr1[i:], turtles[index+i:]):
                         draw(t, x*bar_height_unit)
-                    screen.update()
+            
                     break
+    screen.update()
     return arr1
 
 #implements merge recursively
